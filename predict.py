@@ -2,6 +2,8 @@ import json
 import argparse
 import numpy as np
 import os
+import warnings
+warnings.filterwarnings('ignore')
 
 import tensorflow as tf
 import tensorflow_hub as hub
@@ -50,4 +52,5 @@ def predict(img_path, model_path, k):
     
 if __name__ == "__main__":      
     tf.keras.backend.clear_session()
+    predict(args.img_path, args.model_path, args.top_k)
     
